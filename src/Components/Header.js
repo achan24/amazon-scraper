@@ -3,8 +3,6 @@ import logo from "../images/magnifying-glass2.png"
 const Header = () => {
 
   const today = new Date().toString().slice(0, 10)
-  
-
 
   return ( 
     <header>
