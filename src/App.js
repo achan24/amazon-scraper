@@ -1,4 +1,6 @@
 import { useState, useEffect} from 'react'
+import Card from './Components/Card'
+import Header from './Components/Header'
 
 //functional expression
 const App = () =>{
@@ -28,7 +30,22 @@ const App = () =>{
   //pickup 28:33
   return (
     <div className="App">
-
+      <Header />
+      <nav>
+        <button className="primary">Amazon</button>
+        <button className="primary" disabled>Aliexpress</button>
+        <button className="primary" disabled>eBay</button>
+        <button className="primary" disabled>Etsy</button>
+      </nav>
+      <div>
+        <h2>Best deal!</h2>
+        <div className="feed">
+          {/* If deal exists grab card component*/}
+          {/* pos will be the unique identifier*/}
+          {/* The item we pass through is that whole object */}
+          {deals?.map(deal => <Card key="deal.pos" item={deal}/>)}
+        </div>
+      </div>
     </div>
   );
 }
