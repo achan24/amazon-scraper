@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect} from 'react'
 
-function App() {
+//functional expression
+const App = () =>{
+  const[deals, setDeals] = useState(null)
+
+  const getDeals = async() => {
+    try {
+      const response = await fetch('http://localhost:8000/deals', {
+        method: "GET"
+      });
+      const data = await response.json();
+      setDeals(data);
+    } catch (err) {
+      console.error(err);
+    }
+    
+
+  }//Remember if code is inside a method or not
+
+  //useEffect must be not be inside an async function
+  useEffect(() => {
+    getDeals() 
+  }, []);
+
+
+  console.log(deals)
+  //pickup 28:33
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   );
 }
