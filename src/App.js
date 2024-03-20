@@ -6,6 +6,7 @@ import Header from './Components/Header'
 const App = () =>{
   const[deals, setDeals] = useState(null)
 
+
   const getDeals = async() => {
     try {
       const response = await fetch('http://localhost:8000/deals', {
@@ -26,6 +27,7 @@ const App = () =>{
   }, []);
 
 
+
   console.log(deals)
   //pickup 28:33
   return (
@@ -43,7 +45,7 @@ const App = () =>{
           {/* If deal exists grab card component*/}
           {/* pos will be the unique identifier*/}
           {/* The item we pass through is that whole object */}
-          {deals?.map(deal => <Card key={deal.pos} item={deal}/>)}
+          {deals?.map(deal => <Card key={deal.pos} item={deal} />)}
         </div>
       </div>
     </div>
