@@ -6,8 +6,10 @@ require('dotenv').config()
 
 app.use(cors())//override any cors messages
 
-const username = process.env.USERNAME;
-const password = process.env.PASSWORD;
+// const username = process.env.USERNAME;
+// const password = process.env.PASSWORD;
+const username = "dude2025"
+const password = "0DHnw3K4ES4eTzM"
 
 app.get('/deals', async (req, res) => {
 
