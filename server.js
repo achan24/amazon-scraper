@@ -2,11 +2,12 @@ const PORT = 8000
 const express = require('express')
 const cors = require('cors')
 const app = express() //methods of express attached to variable app
+require('dotenv').config()
 
 app.use(cors())//override any cors messages
 
-const username = "dude2025";
-const password = "0DHnw3K4ES4eTzM";
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
 
 app.get('/deals', async (req, res) => {
 
